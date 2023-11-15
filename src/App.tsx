@@ -1,13 +1,11 @@
-
-import { SearchRecipe } from "./components/Search"
-
+import { NavBar } from "./components/NavBar"
 
 function App() {
 
   return (
-    <div>
-      <SearchRecipe></SearchRecipe>
-    </div>
+    <>
+    <NavBar/>
+    </>
   )
 }
 
