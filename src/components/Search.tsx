@@ -1,18 +1,17 @@
-
-import { useState} from "react";
+import { useState, ChangeEvent, KeyboardEvent } from "react";
 import { IoSearch } from "react-icons/io5";
 import axios from "axios";
 
 export function SearchRecipe() {
-  const [query, setQuery] = useState("");
-  const [data, setData] = useState(null);
+  const [query, setQuery] = useState<string>("");
+  const [data, setData] = useState();
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevents the default form submission behavior
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
     const options = {
       method: "GET",
@@ -35,9 +34,9 @@ export function SearchRecipe() {
     }
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      handleSubmit(e);
+      handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
     }
   };
 
@@ -57,7 +56,7 @@ export function SearchRecipe() {
               name="search"
               value={query}
               onChange={handleChange}
-              onKeyDown={handleKeyDown} 
+              onKeyDown={handleKeyDown}
             />
           </label>
         </form>
