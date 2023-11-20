@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 interface Recipe {
   name: string;
   thumbnail_url: string;
+  id: string
   // Add other properties if needed
 }
 export function MainRecipe({ recipes }: { recipes: Recipe }) {
@@ -26,15 +29,14 @@ export function MainRecipe({ recipes }: { recipes: Recipe }) {
             <div className="min-w-fit">
               <h3 className="text-xl font-bold mb">What We're Cooking</h3>
             </div>
-            <div>
-             <h1 className="text-5xl font-bold hover:text-red-600">{recipes.name}</h1>
-            </div>
-            <div>
-             <img src={recipes.thumbnail_url} alt={recipes.name} />
-            </div>
-          
-         
-   
+            <Link to={`/detail/${recipes.id}`}>
+             <div>
+              <h1 className="text-5xl font-bold hover:text-red-600">{recipes.name}</h1>
+             </div>
+             <div>
+              <img src={recipes.thumbnail_url} alt={recipes.name} />
+             </div>
+            </Link>
         </div>
       </div>
     );

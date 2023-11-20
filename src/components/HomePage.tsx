@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { MainRecipe } from "./MainRecipe";
 import { SecondaryRecipes } from "./SecondaryRecipes";
 import { Loading } from "./Loading";
+import { NavBar } from "./NavBar";
 
 export function HomePage() {
   const [recipes, setRecipes] = useState([]);
@@ -35,7 +37,6 @@ export function HomePage() {
     };
 
     fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if(recipes.length === 0) {
     return(
@@ -48,6 +49,7 @@ export function HomePage() {
 
   return (
     <>
+    
       <div className="px-10 lg:max-w-6xl mx-auto">
         <div className="flex justify-between">
           <div>
