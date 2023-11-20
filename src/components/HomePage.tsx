@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { MainRecipe } from "./MainRecipe";
 import { SecondaryRecipes } from "./SecondaryRecipes";
+import { Loading } from "./Loading";
 
 export function HomePage() {
   const [recipes, setRecipes] = useState([]);
@@ -36,6 +37,14 @@ export function HomePage() {
     fetchData();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  if(recipes.length === 0) {
+    return(
+      <>
+      <Loading/>
+      </>
+    )
+
+  }
 
   return (
     <>
