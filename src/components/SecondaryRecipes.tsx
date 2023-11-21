@@ -1,7 +1,6 @@
 interface Recipe {
     name: string;
     thumbnail_url: string;
-    // Add other properties if needed
   }
 
 export function SecondaryRecipes({ recipes }: { recipes: Recipe }){

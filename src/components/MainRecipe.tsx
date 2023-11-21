@@ -4,7 +4,6 @@ interface Recipe {
   name: string;
   thumbnail_url: string;
   id: string
-  // Add other properties if needed
 }
 export function MainRecipe({ recipes }: { recipes: Recipe }) {
     return (

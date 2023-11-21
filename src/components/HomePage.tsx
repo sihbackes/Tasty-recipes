@@ -4,7 +4,7 @@ import axios from "axios";
 import { MainRecipe } from "./MainRecipe";
 import { SecondaryRecipes } from "./SecondaryRecipes";
 import { Loading } from "./Loading";
-import { NavBar } from "./NavBar";
+
 
 export function HomePage() {
   const [recipes, setRecipes] = useState([]);
@@ -28,8 +28,6 @@ export function HomePage() {
       try {
         const response = await axios.request(options);
         setRecipes(response.data.results);
-
-        console.log(recipes[0])
 
       } catch (error) {
         console.error(error);
