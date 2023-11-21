@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 interface Recipe {
   name: string;
   thumbnail_url: string;
-  id: string
+  id: string;
 }
 export function MainRecipe({ recipes }: { recipes: Recipe }) {
     return (
       <div>
         <svg
           className="absolute"
-          style={{width: '700px'}}
+          style={{width: '750px'}}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 820 880"
           fill="none"
@@ -26,13 +26,13 @@ export function MainRecipe({ recipes }: { recipes: Recipe }) {
   
         <div className="m-6 ml-20 relative z-10" style={{width: '600px'}}>
             <div className="min-w-fit">
-              <h3 className="text-xl font-bold mb">What We're Cooking</h3>
+              <h3 className="text-xl font-bold mb-10">What We're Cooking</h3>
             </div>
             <Link to={`/detail/${recipes.id}`}>
              <div>
               <h1 className="text-5xl font-bold hover:text-red-600">{recipes.name}</h1>
              </div>
-             <div>
+             <div className="">
               <img src={recipes.thumbnail_url} alt={recipes.name} />
              </div>
             </Link>
